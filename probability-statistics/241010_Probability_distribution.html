@@ -206,7 +206,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003 Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241010 Probability distribution.html">Probability distribution</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003_Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241010_Probability_distribution.html">Probability distribution</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -264,24 +264,46 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../probability-statistics/241003 Kalman-filter.html" class="sidebar-item-text sidebar-link">
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../probability-statistics/241003_Kalman-filter.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Kalman-filter</span></a>
-  </div>
-</li>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+ <span class="menu-text">2D Kalman-filter</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">Extend Kalman-filter</span>
+  </li>
+      </ul>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../probability-statistics/241010 Probability distribution.html" class="sidebar-item-text sidebar-link active">
+  <a href="../probability-statistics/241010_Probability_distribution.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Probability distribution</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../probability-statistics/241011_Rice_distribution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rice distribution</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../probability-statistics/241011 Rice distribution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Rice distribution</span></a>
+  <a href="../probability-statistics/241011_Rice_distribution_proof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rice distribution proof</span></a>
   </div>
 </li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -309,7 +331,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003 Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241010 Probability distribution.html">Probability distribution</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003_Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241010_Probability_distribution.html">Probability distribution</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Probability distribution</h1>
 </div>
@@ -369,7 +391,7 @@ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x - \mu)^2}{2\sigma^2} \
 <div id="fig-plot-gauss" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-gauss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="241010 Probability distribution_files/figure-html/fig-plot-gauss-output-1.png" width="604" height="436" class="figure-img">
+<img src="241010_Probability_distribution_files/figure-html/fig-plot-gauss-output-1.png" width="604" height="436" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-gauss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Gaussian 분포의 확률 밀도 함수 그래프 <span class="math inline">\(\mu=0,\sigma=1\)</span>
@@ -412,7 +434,7 @@ f(x) = \begin{cases}
 <div id="fig-plot-uniform" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="241010 Probability distribution_files/figure-html/fig-plot-uniform-output-1.png" width="596" height="436" class="figure-img">
+<img src="241010_Probability_distribution_files/figure-html/fig-plot-uniform-output-1.png" width="596" height="436" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-uniform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Uniform 분포의 확률 밀도 함수 그래프 <span class="math inline">\(a=0,b=2\)</span>
@@ -454,14 +476,14 @@ f(x; k) = \frac{1}{2^{k/2}\Gamma(k/2)} x^{(k/2)-1} e^{-x/2},
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/lj/v2s5sd8n1cv2xdh0yw2kf0x00000gn/T/ipykernel_17132/2007568854.py:6: RuntimeWarning: divide by zero encountered in power
+<pre><code>/var/folders/lj/v2s5sd8n1cv2xdh0yw2kf0x00000gn/T/ipykernel_38402/2007568854.py:6: RuntimeWarning: divide by zero encountered in power
   return 1/(2**(k/2)*gamma(k/2))*(x**(k/2-1)*np.exp(-x/2))</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div id="fig-plot-kai" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-kai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="241010 Probability distribution_files/figure-html/fig-plot-kai-output-2.png" width="596" height="441" class="figure-img">
+<img src="241010_Probability_distribution_files/figure-html/fig-plot-kai-output-2.png" width="596" height="441" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-kai-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Kai-square 분포의 확률 밀도 함수 그래프 <span class="math inline">\(k=1,2,3,4,6,9\)</span>
@@ -505,7 +527,7 @@ f(x; \sigma) = \frac{x}{\sigma^2} e^{-\frac{x^2}{2\sigma^2}}
 <div id="fig-plot2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="241010 Probability distribution_files/figure-html/fig-plot2-output-1.png" width="596" height="436" class="figure-img">
+<img src="241010_Probability_distribution_files/figure-html/fig-plot2-output-1.png" width="596" height="436" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Reighley 분포의 확률 밀도 함수 그래프 <span class="math inline">\(\sigma=0.5,1,2,3,4\)</span>
@@ -550,7 +572,7 @@ f(x;k)= \frac{\lambda^k e^{-\lambda}}{k!}
 <div id="fig-plot-possion" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot-possion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="241010 Probability distribution_files/figure-html/fig-plot-possion-output-1.png" width="604" height="436" class="figure-img">
+<img src="241010_Probability_distribution_files/figure-html/fig-plot-possion-output-1.png" width="604" height="436" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-possion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5: Possion 분포의 확률 질량 함수 그래프 <span class="math inline">\(\lambda=1,4,10\)</span>
@@ -654,7 +676,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/Gug-Young\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

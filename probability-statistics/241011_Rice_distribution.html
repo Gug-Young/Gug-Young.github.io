@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-10-03">
 
-<title>Gug-Young.github.io</title>
+<title>Gug-Young.github.io - Rice distribution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,6 +102,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -122,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../computational-physics/index.html">전산물리</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003_Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241011_Rice_distribution.html">Rice distribution</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../computational-physics/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../computational-physics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">전산물리</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -153,7 +217,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../computational-physics/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../computational-physics/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">소개</span></a>
   </div>
 </li>
@@ -205,13 +269,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../probability-statistics/241011_Rice_distribution.html" class="sidebar-item-text sidebar-link">
+            <a href="../probability-statistics/241011_Rice_distribution.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Rice distribution</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../probability-statistics/241011_Rice_distribution_proof.html" class="sidebar-item-text sidebar-link">
@@ -228,16 +292,172 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-Rayleigh-dist" id="toc-sec-Rayleigh-dist" class="nav-link active" data-scroll-target="#sec-Rayleigh-dist">Rayleigh distribution</a></li>
+  <li><a href="#rice-distirbution" id="toc-rice-distirbution" class="nav-link" data-scroll-target="#rice-distirbution">Rice distirbution</a>
+  <ul class="collapse">
+  <li><a href="#rice-분포란" id="toc-rice-분포란" class="nav-link" data-scroll-target="#rice-분포란">Rice 분포란?</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../probability-statistics/241003_Kalman-filter.html">수중음향 신호처리</a></li><li class="breadcrumb-item"><a href="../probability-statistics/241011_Rice_distribution.html">Rice distribution</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Rice distribution</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 3, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="sec-Rayleigh-dist" class="level1">
+<h1>Rayleigh distribution</h1>
+<p>해당 분포는, 평균이 0이고, 분산이 <span class="math inline">\(\sigma\)</span>인 2개의 독립적인 정규 분포를 따르는 확률변수 <span class="math inline">\(X,Y\)</span>가 있을 때의 분포이며, <span class="math inline">\(X,Y\)</span>를 통해서 만들어진 분포 <span class="math inline">\(R\)</span>은 <span class="math inline">\(X,Y\)</span>와 다음과 같은 관계를 가진다: <span id="eq-R-Reighley"><span class="math display">\[
+R= \sqrt{X^2+Y^2}
+\tag{1}\]</span></span></p>
+<p>이 떄의 PDF를 그린다면, 다음과 같은 분포를 나타낼 수 있다. <span id="eq-ReighleyPDF"><span class="math display">\[
+f(x;\sigma) = \frac{x}{\sigma^2}e^{-x^2/2\sigma**2}
+\tag{2}\]</span></span></p>
+<p>다른 확률 분포에 대한 설명은 <a href="../probability-statistics/241010_Probability_distribution.html">Probability distribution</a>에서 확인할 수 있다.</p>
+<div id="cell-fig-plot-Raylegih" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Reighley(x,sigma):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">/</span>sigma<span class="op">**</span><span class="dv">2</span> <span class="op">*</span>np.exp(<span class="op">-</span>(x)<span class="op">**</span><span class="dv">2</span><span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">40</span>,<span class="dv">1000</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.normal(<span class="dv">0</span>,sigma,N)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.normal(<span class="dv">0</span>,sigma,N)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> np.sqrt(X<span class="op">**</span><span class="dv">2</span><span class="op">+</span>Y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">121</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.hist2d(X,Y,bins<span class="op">=</span>(<span class="dv">100</span>,<span class="dv">100</span>),density<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y'</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>cbar.ax.set_title(<span class="st">'PDF'</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">122</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.hist(R,bins<span class="op">=</span><span class="dv">100</span>,density<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.plot(xs,Reighley(xs,sigma))</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'PDF'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'R'</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-plot-raylegih" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-raylegih-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="241011_Rice_distribution_files/figure-html/fig-plot-raylegih-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-raylegih-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <span class="math inline">\(X,Y\)</span>의 2D histogram과, <span class="math inline">\(R\)</span>에대한 histogram과 Rayleigh distribution
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="rice-distirbution" class="level1">
+<h1>Rice distirbution</h1>
+<section id="rice-분포란" class="level2">
+<h2 class="anchored" data-anchor-id="rice-분포란">Rice 분포란?</h2>
+<p>Rice 분포(라이스 분포)는 확률 이론과 신호 처리 분야에서 중요한 연속 확률 분포 중 하나이다. 이 분포는 두 개의 독립적인 가우시안(정규) 확률 변수가 있을 때, 그들의 크기(벡터의 길이)에 대한 분포를 나타낸다. 특히, 평균이 0일때의 <a href="#sec-Rayleigh-dist" class="quarto-xref">Section&nbsp;1</a> 과 달리 중심이 0이 아닌, 보다 일반적인 경우에 해당된다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Rice_distribution_motivation.svg/600px-Rice_distribution_motivation.svg.png" class="img-fluid figure-img"></p>
+<figcaption>Rice_dist</figcaption>
+</figure>
+</div>
+<p><a href="https://en.wikipedia.org/wiki/Rice_distribution">source</a></p>
+<p>다음 위의 의 그래프에서 볼 수 있듯이, 중심과의 거리가 <span class="math inline">\(\nu\)</span>일 때 길이가 <span class="math inline">\(R\)</span>인 벡터가 있을 확률을 의미하게 된다.</p>
+<p>이 경우의 확률 분포를 나타내면 <a href="#eq-R-Reighley" class="quarto-xref">Equation&nbsp;1</a> 와 동일하게 나타낼 수 있다: <span class="math display">\[
+R=\sqrt{X^2+Y^2}
+\]</span></p>
+<p>이제 확률 변수 <span class="math inline">\(R\)</span>에 대한 확률 밀도 함수 PDF를 나타내면 다음과 같이 작성 할 수 있다: <span class="math display">\[
+{\displaystyle f(x\mid \nu ,\sigma )={\frac {x}{\sigma ^{2}}}\exp \left({\frac {-(x^{2}+\nu ^{2})}{2\sigma ^{2}}}\right)I_{0}\left({\frac {x\nu }{\sigma ^{2}}}\right),}
+\]</span> 여기서 <span class="math inline">\(I_0\)</span>는 0차 1종 수정 베셀함수(modified Bessel function of the 1st kind of order 0)로</p>
+<p><span class="math display">\[
+x^{2}{\frac {d^{2}y}{dx^{2}}}+x{\frac {dy}{dx}}-\left(x^{2}-n ^{2}\right)y=0
+\]</span> 수정 베셀 방정식을 만족하는 해를 나타낸다.</p>
+<p><span class="math inline">\(X,Y\)</span>의 분포를 이용해 <span class="math inline">\(R\)</span>에 대한 분포로 나타내는 과정은 <a href="../probability-statistics/241011_Rice_distribution_proof.html">다음</a>에서 기술한다.</p>
+<div id="cell-fig-plot-Rice" class="cell" data-execution_count="22">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> i0</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Rice(x,sigma,nu):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">/</span>sigma<span class="op">**</span><span class="dv">2</span> <span class="op">*</span>np.exp(<span class="op">-</span>(x<span class="op">**</span><span class="dv">2</span><span class="op">+</span>nu<span class="op">**</span><span class="dv">2</span>)<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span>sigma<span class="op">**</span><span class="dv">2</span>))<span class="op">*</span>i0(x<span class="op">*</span>nu<span class="op">/</span>sigma<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>sigma <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x0,y0 <span class="op">=</span> <span class="dv">30</span>,<span class="dv">2</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>nu <span class="op">=</span> np.sqrt(x0<span class="op">**</span><span class="dv">2</span><span class="op">+</span>y0<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.normal(x0,sigma,N)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> np.random.normal(y0,sigma,N)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> np.sqrt(X<span class="op">**</span><span class="dv">2</span><span class="op">+</span>Y<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">80</span>,<span class="dv">1000</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">121</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.hist2d(X,Y,bins<span class="op">=</span>(<span class="dv">100</span>,<span class="dv">100</span>),density<span class="op">=</span><span class="va">True</span>,cmap<span class="op">=</span><span class="st">'gray_r'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="dv">40</span>,<span class="dv">80</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">40</span>,<span class="dv">40</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">0</span>,x0],[<span class="dv">0</span>,y0],<span class="st">'.-'</span>,markersize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X'</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y'</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar()</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>cbar.ax.set_title(<span class="st">'PDF'</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">122</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>plt.hist(R,bins<span class="op">=</span><span class="dv">100</span>,density<span class="op">=</span><span class="va">True</span>)<span class="op">;</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.plot(xs,Rice(xs,sigma,nu))</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'PDF'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'R'</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.axvline(nu,ls<span class="op">=</span><span class="st">'--'</span>,color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-plot-rice" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot-rice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="241011_Rice_distribution_files/figure-html/fig-plot-rice-output-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot-rice-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: <span class="math inline">\(X,Y\)</span>의 2D histogram과, <span class="math inline">\(R\)</span>에대한 histogram과 Rice distribution
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
