@@ -270,7 +270,7 @@ window.Quarto = {
   <li><a href="#베셀-함수가-rice-분포의-pdf에-등장하는-이유" id="toc-베셀-함수가-rice-분포의-pdf에-등장하는-이유" class="nav-link" data-scroll-target="#베셀-함수가-rice-분포의-pdf에-등장하는-이유">4. 베셀 함수가 Rice 분포의 PDF에 등장하는 이유</a>
   <ul class="collapse">
   <li><a href="#문제-설정" id="toc-문제-설정" class="nav-link" data-scroll-target="#문제-설정">4.1 문제 설정</a></li>
-  <li><a href="#합동-확률-밀도-함수와-극좌표-변환" id="toc-합동-확률-밀도-함수와-극좌표-변환" class="nav-link" data-scroll-target="#합동-확률-밀도-함수와-극좌표-변환">4.2 합동 확률 밀도 함수와 극좌표 변환</a></li>
+  <li><a href="#결합-확률-밀도-함수와-극좌표-변환" id="toc-결합-확률-밀도-함수와-극좌표-변환" class="nav-link" data-scroll-target="#결합-확률-밀도-함수와-극좌표-변환">4.2 결합 확률 밀도 함수와 극좌표 변환</a></li>
   <li><a href="#r의-확률-밀도-함수-유도" id="toc-r의-확률-밀도-함수-유도" class="nav-link" data-scroll-target="#r의-확률-밀도-함수-유도">4.3 <span class="math inline">\(R\)</span>의 확률 밀도 함수 유도</a></li>
   <li><a href="#지수-함수-내의-식-전개-및-단순화" id="toc-지수-함수-내의-식-전개-및-단순화" class="nav-link" data-scroll-target="#지수-함수-내의-식-전개-및-단순화">4.4 지수 함수 내의 식 전개 및 단순화</a></li>
   <li><a href="#적분-부분에서-베셀-함수-등장" id="toc-적분-부분에서-베셀-함수-등장" class="nav-link" data-scroll-target="#적분-부분에서-베셀-함수-등장">4.5 적분 부분에서 베셀 함수 등장</a></li>
@@ -368,13 +368,13 @@ R = \sqrt{X^2 + Y^2}
 <p>목표: <span class="math inline">\(R\)</span>의 확률 밀도 함수 <span class="math inline">\(f_R(r)\)</span>를 구한다.</p>
 <hr>
 </section>
-<section id="합동-확률-밀도-함수와-극좌표-변환" class="level3">
-<h3 class="anchored" data-anchor-id="합동-확률-밀도-함수와-극좌표-변환">4.2 합동 확률 밀도 함수와 극좌표 변환</h3>
-<p>합동 확률 밀도 함수:</p>
+<section id="결합-확률-밀도-함수와-극좌표-변환" class="level3">
+<h3 class="anchored" data-anchor-id="결합-확률-밀도-함수와-극좌표-변환">4.2 결합 확률 밀도 함수와 극좌표 변환</h3>
+<p>결합 확률 밀도 함수(Joint probability distribution):</p>
 <p><span class="math display">\[
 f_{X,Y}(x, y) = \frac{1}{2\pi \sigma^2} \exp\left( -\frac{(x - \mu_x)^2 + (y - \mu_y)^2}{2\sigma^2} \right)
 \]</span></p>
-<p><strong>극좌표 변환</strong>을 적용합니다:</p>
+<p><strong>극좌표 변환</strong>을 적용한다:</p>
 <ul>
 <li><span class="math inline">\(x = r \cos \theta\)</span></li>
 <li><span class="math inline">\(y = r \sin \theta\)</span></li>
@@ -384,7 +384,7 @@ f_{X,Y}(x, y) = \frac{1}{2\pi \sigma^2} \exp\left( -\frac{(x - \mu_x)^2 + (y - \
 </section>
 <section id="r의-확률-밀도-함수-유도" class="level3">
 <h3 class="anchored" data-anchor-id="r의-확률-밀도-함수-유도">4.3 <span class="math inline">\(R\)</span>의 확률 밀도 함수 유도</h3>
-<p><span class="math inline">\(R\)</span>의 확률 밀도 함수는 다음과 같습니다:</p>
+<p><span class="math inline">\(R\)</span>의 확률 밀도 함수는 다음과 같다:</p>
 <p><span class="math display">\[
 f_R(r) = \int_{0}^{2\pi} f_{X,Y}(r \cos \theta, r \sin \theta) \cdot r \, d\theta
 \]</span></p>
@@ -396,11 +396,13 @@ f_R(r) = \frac{r}{2\pi \sigma^2} \int_{0}^{2\pi} \exp\left( -\frac{(r \cos \thet
 </section>
 <section id="지수-함수-내의-식-전개-및-단순화" class="level3">
 <h3 class="anchored" data-anchor-id="지수-함수-내의-식-전개-및-단순화">4.4 지수 함수 내의 식 전개 및 단순화</h3>
-<p>지수 함수 내의 식을 전개합니다:</p>
-<p>[ <span class="math display">\[\begin{align*}
+<p>지수 함수 내의 식을 전개하면 다음과 같이 나타난다:</p>
+<p><span class="math display">\[
+\begin{align*}
 (r \cos \theta - \mu_x)^2 + (r \sin \theta - \mu_y)^2 &amp;= r^2 - 2 r \mu_x \cos \theta + \mu_x^2 + r^2 - 2 r \mu_y \sin \theta + \mu_y^2 \\
 &amp;= 2 r^2 - 2 r (\mu_x \cos \theta + \mu_y \sin \theta) + (\mu_x^2 + \mu_y^2)
-\end{align*}\]</span> ]</p>
+\end{align*}
+\]</span></p>
 <p>이를 단순화하면:</p>
 <p><span class="math display">\[
 (r \cos \theta - \mu_x)^2 + (r \sin \theta - \mu_y)^2 = r^2 + \nu^2 - 2 r \nu \cos(\theta - \phi)
@@ -412,7 +414,7 @@ f_R(r) = \frac{r}{2\pi \sigma^2} \int_{0}^{2\pi} \exp\left( -\frac{(r \cos \thet
 <li><span class="math inline">\(\mu_x = \nu \cos \phi\)</span></li>
 <li><span class="math inline">\(\mu_y = \nu \sin \phi\)</span></li>
 </ul>
-<p>지수 함수 내의 전체 식은 다음과 같이 됩니다:</p>
+<p>지수 함수 내의 전체 식을 전개하면:</p>
 <p><span class="math display">\[
 -\frac{(r^2 + \nu^2 - 2 r \nu \cos(\theta - \phi))}{2\sigma^2} = -\frac{r^2 + \nu^2}{2\sigma^2} + \frac{r \nu}{\sigma^2} \cos(\theta - \phi)
 \]</span></p>
@@ -420,11 +422,11 @@ f_R(r) = \frac{r}{2\pi \sigma^2} \int_{0}^{2\pi} \exp\left( -\frac{(r \cos \thet
 </section>
 <section id="적분-부분에서-베셀-함수-등장" class="level3">
 <h3 class="anchored" data-anchor-id="적분-부분에서-베셀-함수-등장">4.5 적분 부분에서 베셀 함수 등장</h3>
-<p>따라서 <span class="math inline">\(f_R(r)\)</span>는 다음과 같이 표현됩니다:</p>
+<p>따라서 <span class="math inline">\(f_R(r)\)</span>는 다음과 같이 표현 된다:</p>
 <p><span class="math display">\[
 f_R(r) = \frac{r}{2\pi \sigma^2} \exp\left( -\frac{r^2 + \nu^2}{2\sigma^2} \right) \int_{0}^{2\pi} \exp\left( \frac{r \nu}{\sigma^2} \cos(\theta - \phi) \right) d\theta
 \]</span></p>
-<p>여기서 적분 부분은 베셀 함수로 나타납니다:</p>
+<p>여기서 적분 부분은 베셀 함수로 나타 낼 수 있다:</p>
 <p><span class="math display">\[
 \int_{0}^{2\pi} \exp\left( \kappa \cos \theta \right) d\theta = 2\pi I_0(\kappa)
 \]</span></p>
@@ -440,16 +442,16 @@ f_R(r) = \frac{r}{2\pi \sigma^2} \exp\left( -\frac{r^2 + \nu^2}{2\sigma^2} \righ
 <p><span class="math display">\[
 f_R(r) = \frac{r}{\sigma^2} \exp\left( -\frac{r^2 + \nu^2}{2\sigma^2} \right) I_0\left( \frac{r \nu}{\sigma^2} \right)
 \]</span></p>
-<p>따라서 <strong>Rice 분포의 확률 밀도 함수</strong>에 베셀 함수 <span class="math inline">\(I_0\)</span>가 등장하게 됩니다.</p>
+<p>따라서 <strong>Rice 분포의 확률 밀도 함수</strong>에 베셀 함수 <span class="math inline">\(I_0\)</span>가 등장하게 된다.</p>
 <hr>
 </section>
 </section>
 <section id="결론" class="level2">
 <h2 class="anchored" data-anchor-id="결론">5. 결론</h2>
 <ul>
-<li><strong>정규분포와 Rice 분포의 관계</strong>: 두 개의 독립적인 정규분포 확률 변수의 크기는 Rice 분포를 따릅니다.</li>
-<li><strong>베셀 함수의 등장 이유</strong>: 극좌표 변환 후 각도에 대한 적분을 수행하는 과정에서 베셀 함수가 자연스럽게 나타납니다.</li>
-<li><strong>의의</strong>: 이러한 유도 과정은 신호 처리, 통신 이론 등에서 중요한 역할을 합니다.</li>
+<li><strong>정규분포와 Rice 분포의 관계</strong>: 두 개의 독립적인 정규분포 확률 변수의 크기는 Rice 분포를 따른다.</li>
+<li><strong>베셀 함수의 등장 이유</strong>: 극좌표 변환 후 각도에 대한 적분을 수행하는 과정에서 베셀 함수가 자연스럽게 나타난다.</li>
+<li><strong>의의</strong>: 이러한 유도 과정은 신호 처리, 통신 이론 등에서 중요한 역할을 한다.</li>
 </ul>
 <hr>
 </section>
