@@ -1,10 +1,39 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "probability-statistics/241003 Kalman-filter.html",
+    "href": "probability-statistics/241003 Kalman-filter.html",
+    "title": "Kalman filter",
     "section": "",
-    "text": "About this site"
+    "text": "어떤 물체의 움직임을 나타낼때 2차원 공간에서는 \\(x\\)축의 움직임과 \\(y\\)축의 움직임으로 나타낼 수 있다. 이를 다음과 같이 나타낼 수 있으며:\n\\[\n{X} = \\begin{pmatrix} x\\\\y \\\\ \\dot{x} \\\\ \\dot{y} \\end{pmatrix},\n\\tag{1}\\]\n이와 같은 형태를 상태 벡터(state vector;\\(n\\times1\\))라고 부른다.\n또한 기기에 달려있는 센서를 통해서 원하는 기체의 움직임을 측정할 수 있는데, 이를 다음과 같이 나타낼 수 있다. \\[\n{Z} = {HX} +{V},\n\\tag{2}\\]\n여기서 \\({X}\\)는 Equation 1 이며, \\({Z}\\)는 측정 벡터(measurement vector, \\(m\\times 1\\)) 그리고 \\(H\\) 측정 모델 행렬(measurement matrix, \\(m\\times n\\))는 \\(V\\)는 측정 노이즈 벡터(measurement noise vector, \\(m \\times 1\\))라고 한다. 센서가 정보를 측정한 결과는 공간상에서 가우시안 노이즈가 있다고 가정을 하며, 해당 공간에서 가장 신호가 강한 부분을 측정결과로 가지게 된다. 측정 노이즈 \\({V}\\)의 공분산 행렬(\\(m\\times m\\))은 \\({R}_k\\)로 나타낸다.\n배의 움직임을 측정할때, 배는 빠른시간 동안 급격한 회전을 하지 못해 보통 선형 운동을 한다고 가정한다. 이전 상태 \\({X}_{k-1}\\)을 알고 있을떄 다음 스탭의 상태 \\({X}_{k}\\)은\n\\[\n\\dot{{X}}_{k}=\\Phi X_{k-1} + \\Gamma_k \\omega_{k-1}\n\\tag{3}\\]\n다음과 같은 방정식으로 나타낼 수 있으며, \\(\\Phi\\)는 기체의 움직임에 관한 모델이며, 상태 천이 행렬(transition matrix; \\(n \\times n\\))라고 부르며, \\(\\Gamma\\)는 모델에서 예측하지 못한 부분을 나타내며 process noise vector (\\(n\\times 1\\))라고 부른다. 또한 모델이 예측하지 못한 부분의 공분산 행렬(\\(n\\times n\\))은 \\(Q_k\\)로 나타낸다.",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Kalman-filter"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241003 Kalman-filter.html#measurement-eqaution-and-state-equation",
+    "href": "probability-statistics/241003 Kalman-filter.html#measurement-eqaution-and-state-equation",
+    "title": "Kalman filter",
+    "section": "",
+    "text": "어떤 물체의 움직임을 나타낼때 2차원 공간에서는 \\(x\\)축의 움직임과 \\(y\\)축의 움직임으로 나타낼 수 있다. 이를 다음과 같이 나타낼 수 있으며:\n\\[\n{X} = \\begin{pmatrix} x\\\\y \\\\ \\dot{x} \\\\ \\dot{y} \\end{pmatrix},\n\\tag{1}\\]\n이와 같은 형태를 상태 벡터(state vector;\\(n\\times1\\))라고 부른다.\n또한 기기에 달려있는 센서를 통해서 원하는 기체의 움직임을 측정할 수 있는데, 이를 다음과 같이 나타낼 수 있다. \\[\n{Z} = {HX} +{V},\n\\tag{2}\\]\n여기서 \\({X}\\)는 Equation 1 이며, \\({Z}\\)는 측정 벡터(measurement vector, \\(m\\times 1\\)) 그리고 \\(H\\) 측정 모델 행렬(measurement matrix, \\(m\\times n\\))는 \\(V\\)는 측정 노이즈 벡터(measurement noise vector, \\(m \\times 1\\))라고 한다. 센서가 정보를 측정한 결과는 공간상에서 가우시안 노이즈가 있다고 가정을 하며, 해당 공간에서 가장 신호가 강한 부분을 측정결과로 가지게 된다. 측정 노이즈 \\({V}\\)의 공분산 행렬(\\(m\\times m\\))은 \\({R}_k\\)로 나타낸다.\n배의 움직임을 측정할때, 배는 빠른시간 동안 급격한 회전을 하지 못해 보통 선형 운동을 한다고 가정한다. 이전 상태 \\({X}_{k-1}\\)을 알고 있을떄 다음 스탭의 상태 \\({X}_{k}\\)은\n\\[\n\\dot{{X}}_{k}=\\Phi X_{k-1} + \\Gamma_k \\omega_{k-1}\n\\tag{3}\\]\n다음과 같은 방정식으로 나타낼 수 있으며, \\(\\Phi\\)는 기체의 움직임에 관한 모델이며, 상태 천이 행렬(transition matrix; \\(n \\times n\\))라고 부르며, \\(\\Gamma\\)는 모델에서 예측하지 못한 부분을 나타내며 process noise vector (\\(n\\times 1\\))라고 부른다. 또한 모델이 예측하지 못한 부분의 공분산 행렬(\\(n\\times n\\))은 \\(Q_k\\)로 나타낸다.",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Kalman-filter"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241003 Kalman-filter.html#sec-Kalman-filter",
+    "href": "probability-statistics/241003 Kalman-filter.html#sec-Kalman-filter",
+    "title": "Kalman filter",
+    "section": "Kalman filter",
+    "text": "Kalman filter\n측정치로 부터 상태 벡터를 추정하며, 추정한 \\(k-1\\)번쩨의 상태벡터 \\(\\hat{X}_{k-1}\\)을 가지고 다음 \\(k\\)번쩨의 상태벡터를 예측(\\(\\bar{X}_k\\))을 한 뒤 보정을 해 \\(\\hat{X}_{k}\\)를 어떻게 얻을 수 있을까? 해당 답은 Kalman filter에 있다.\nKalman filter는 \\(k-1\\)번쩨 추정한 상태벡터가 있을 때 추가적인 측정 결과 \\(y_k\\)가 들어오면, \\(X_k\\)를 예측 및 보정을 하는 필터이다. Kalman filter의 구성은 다음과 같다(Ristic, Arulampalam, and Gordon 2003).\n우선 기존에 있는 상태 벡터 \\(X_{k-1}\\)을 상태 천이행렬 \\(\\Phi\\)에 넣어 \\(X_k\\)를 예측을 하며, \\[\n\\bar{X}_k=\\Phi{\\left(t_k-t_{k-1}\\right)}\\hat{X}_{k-1},\n\\tag{4}\\] 다음 스텝의 오차 공분산 \\(\\bar{P}_k\\)를 구하며, 다음과 같이 나타낼 수 있다: \\[\n\\bar{P}_k = \\Phi{\\left(t_k - t_{k-1}\\right)}\\hat{P}_{k-1}\\Phi{\\left(t_k - t_{k-1}\\right)}^{T}.\n\\tag{5}\\] 여기서 오차 공분산 \\(P\\)는 해당 상태 벡터에 대한 추정이 얼마나 불확실한지를 나타낸다. 만약 다음과 같은 초기 상태 벡터가 구성된다면: \\[\nX_0=\\begin{bmatrix} x_0\\\\v_0 \\end{bmatrix},\n\\]\n\\(x_0\\)에 대한 추정 오차가 10m, \\(v_0\\)에 대한 추정 오차가 \\(1m/s\\)라고 가정할 경우, \\(P_0\\)는 다음과 같이 나타낼 수 있다: \\[\nP_0 = \\begin{bmatrix} \\sigma_x^2 & 0 \\\\ 0 & \\sigma_v^2 \\end{bmatrix} = \\begin{bmatrix} 10^2 & 0 \\\\ 0 & 1^2 \\end{bmatrix}.\n\\] 이후 추정된 \\(\\bar{X}_k\\)과 \\(\\bar{P}_k\\)를 가지고 추정을 하게 된다. 이를 식으로 나타낸다면 다음과 같다: \\[\n\\hat{X}_k = \\bar{X_k}+K_k\\left(y_k-H\\bar{X}_k\\right),\n\\tag{6}\\] \\[\n\\hat{P}_k = \\left(I-K_kH_k\\right)\\bar{P}_k,\n\\tag{7}\\] \\(K_k\\)는 Kalman filter의 gain(\\(n\\times m\\))으로 다음과 같이 정의된다: \\[\nK_k = \\bar{P}_kH_k^T(H_k\\bar{P}_kH_k+R_k)^{-1},\n\\tag{8}\\] 여기서 \\(K_k\\)값이 크다면 예측치와 실제 측정치와의 차이가 많이 난나는 것을 의미하며, 그 값이 작다면, 예측치와 실제 측정치가 잘 맞는다는 것을 의미하게 된다.\n이제는 Kalman filter를 구현해 보도록 하자.\n\n1d movement: constant position\n먼제 다룰 예제는 1차원에서 정지해 있는 움직임을 Kalman filter를 통해서 확이해 보고자 한다. 문제 상황은 다음과 같다.\n1m의 위치해 있는 어떤 물체가 있다. 측정에 노이즈 \\(R_k\\)가 있어 정확한 위치를 알 수 없다. 초기 상태 벡터는 위치 \\(x_0=1.2\\), 속도 \\(\\dot{x}_0=0.8\\)로 추정되며, 오차는 각각 \\(\\sqrt{10}m\\), \\(1m/s\\)로 되어 있다. Kalman filter를 통해서 0스텝에서 100스텝의 상태 벡터 \\(X_k\\)를 얻어보자.\n\\[\nX_k=\\begin{bmatrix}x_p \\\\\\dot{x_p}\\end{bmatrix},  \\quad\ny_k=1:1:100+\\mathscr{N}(0,R_k), \\quad\nX_0 = \\begin{bmatrix}1.2 \\\\ 0.8\\end{bmatrix}, \\quad\nP_0 = \\begin{bmatrix}10 &0\\\\ 0& 1\\end{bmatrix} \\quad\n\\]\n각각의 \\(R_k\\)를 0.1,1,3,10으로 했을 떄 얻어지는 그래프는 다음과 같다.\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nR_k =  [0.1,1,3,10]\ncolors = []\nfor i,R in enumerate(R_k):\n    np.random.seed(0)\n    y = np.random.normal(1,np.sqrt(R),(100,1))\n    l,=plt.plot(y,'x-',label=f'R={R}',alpha=0.8,zorder=-i)\n    colors.append(l.get_color())\nplt.xlabel('$k$',fontsize=15)\nplt.ylabel('$y_k$',fontsize=15)\nplt.legend()\nplt.axhline(1)\n\n\n\n\n\n\n\nFigure 1: \\(R_k\\)에 따른 \\(y_k\\)그래프\n\n\n\n\n\nFigure 1 에서 볼 수 있듯, \\(R_k\\)가 증가할 수록 실제 위치 1m에서 크겨 벗어나는 것을 확인해 볼 수 있다.\n다음은 Section 2 의 수식을 참조해서 구현해 볼 차례이다.이를 구현하면 다음과 같은 코드로 나타낼 수 있다.\n\ndt = 1\nX_0 = np.array([[1.2],[0.8]])\nP_0 = np.array([[10.,0.],[0.,1.]])\nPhi = np.array([[1.,dt],[0.,1.]])\nH = np.array([[1.,0.]])\n\ndef Kalman_filter(X_hp,P_hp,y_k,R):\n    # predict\n    X_bk = Phi@X_hp         \n    P_bk = Phi@P_hp@Phi.T   \n    # get Kalman gain\n    K_k = P_hp@H.T@np.linalg.inv(H@P_bk@H.T+R)\n    # estimate\n    X_hk = X_bk + K_k@(y_k - H@X_bk) \n    P_hk =  (np.eye(len(X_hk)) - K_k@H)@P_bk\n    return X_hk,P_hk,K_k\n\n여기서 상태천이 행렬은 등속 운동을 한다고 가정하여, 다음과 같이 나타낼 수 있다: \\[\nt_k-t_{k-1}=\\Delta t,\\quad\n\\Phi\\left(\\Delta t\\right) = \\begin{bmatrix}1 & \\Delta t\\\\ 0& 1 \\end{bmatrix}\n\\]\nfor c,R in enumerate(R_k):\n    np.random.seed(0)\n    y = np.random.normal(1,np.sqrt(R),(100,1))\n    X_hs = np.zeros((len(y),*X_0.shape))\n    P_hs = np.zeros((len(y),*P_0.shape))\n    K_hs = np.zeros((len(y),X_0.shape[0],1))\n    X_hs[0],P_hs[0],K_hs[0] = Kalman_filter(X_0,P_0,y[0],R)\n    for i,y_k in enumerate(y[1:],1):\n        X_hs[i],P_hs[i],K_hs[i] = Kalman_filter(X_hs[i-1].copy(),P_hs[i-1].copy(),y_k,R)\n    l,=plt.plot(y,'x',label='Measurement',color=colors[c])\n    plt.plot(X_hs[:,0],'.-',color=l.get_color(),label='Estimated')\n    plt.ylim(-5,6)\n    plt.axhline(1)\n    plt.legend()\n    plt.xlabel(r'$k$')\n    plt.ylabel(r'$x_p$')\n    plt.show()\n\n\n\n\n\n\n\n\n\n\n\n(a) \\(R_k=0.1\\)\n\n\n\n\n\n\n\n\n\n\n\n(b) \\(R_k=1\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(c) \\(R_k=3\\)\n\n\n\n\n\n\n\n\n\n\n\n(d) \\(R_k=10\\)\n\n\n\n\n\n\n\nFigure 2: \\(R_k\\)에 따른 Kalman filter의 보정 결과\n\n\n\nFigure 2는 \\(R_k\\)에 따른 Kalman filter로 얻은 \\(x_p\\)를 나타낸다. \\(R_k\\)값이 작을경우 실제 물체의 위치인 \\(x_k=1\\)을 정확하게 예측 및 측정할 수 있으며, \\(R_k\\)가 커질수록 부정확 하게 예측을 하는 것을 볼 수 있다. 하지만 대부분의 Kalman filter의 결과에서 측정으로 얻은 데이터의 편차가 있어도 데이터들을 통해 정확한 위치를 알 수 있음을 보여 주었다.\n\n\n1d movement: constant acceleration\n다음으로 확인해 볼 예제는 1차원 등가속도 운동이다. 이번에도 \\(R_k\\)에 따른 Kalman filter의 관측 결과를 확인해 보려고 한다. 예제는 다음과 같다.\n1m의 위치에서 \\(1m/s\\)의 속도와 \\(-0.02m/s^2\\)의 등가속도로 움직이고 있는 물체가 있다. 측정에 노이즈 \\(R_k\\)가 있어 정확한 위치를 알 수 없다. 초기 상태 벡터는 위치 \\(x_0=1.2\\), 속도 \\(\\dot{x}_0=0.8\\), 등가속도 \\(\\ddot{x}_0=0.1\\)으로 추정되며, 오차는 각각 \\(\\sqrt{10}m\\), \\(1m/s\\), \\(0.01m/s^2\\)로 되어 있다. Kalman filter를 통해서 0스텝에서 100스텝의 상태 벡터 \\(X_k\\)를 얻어보자.\n\\[\nX_k=\\begin{bmatrix}x_p \\\\\\dot{x_p} \\\\\\ddot{x_p} \\end{bmatrix},  \\quad\nt_k = 0:100:100\ny_k= 1 + 1 \\cdot t_k - 1/2 \\cdot 0.03\\cdot t_k^2 + \\mathscr{N}(0,R_k), \\quad\n\\] \\[\nX_0 = \\begin{bmatrix}1.2 \\\\ 0.8\\\\0.1\\end{bmatrix}, \\quad\nP_0 = \\begin{bmatrix}10 &0&0\\\\ 0& 1&0 \\\\ 0&0&0.1\\end{bmatrix} \\quad\n\\]\n각각의 \\(R_k\\)를 0.1,1,3,10으로 했을 떄 얻어지는 그래프는 다음과 같다.\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nR_k =  [0.1,1,3,10]\ncolors = []\nt_k = np.reshape(np.arange(0,100,1),(100,1))\nfor i,R in enumerate(R_k):\n    np.random.seed(0)\n    y = 1 + t_k + -0.5*0.03*t_k**2 + np.random.normal(1,np.sqrt(R),(100,1))\n    l,=plt.plot(y,'x',label=f'R={R}',alpha=0.8,zorder=-i)\n    colors.append(l.get_color())\nplt.xlabel('$k$',fontsize=15)\nplt.ylabel('$y_k$',fontsize=15)\nplt.legend()\nplt.plot(t_k,1 + t_k -0.5*0.03*t_k**2,color='k')\n\n\n\n\n\n\n\nFigure 3: \\(R_k\\)에 따른 \\(y_k\\)그래프\n\n\n\n\n\nFigure 3 에서 볼 수 있듯, \\(R_k\\)가 커질수록 실제 움직임을 나타낸 선(-)과 크게 벗어나는 양상을 보여 주는 것을 확인해 볼수 있다. 또한 아래로 가는 포물선의 양상을 보여 준다.\n이제 다음과 같은 데이터를 Kalman filter를 이용해서 확인해 보아야 한다. 등가속도 운동이 있는 상태천이 행렬은 다음과 같다. \\[\nt_k-t_{k-1}=\\Delta t,\\quad\n\\Phi\\left(\\Delta t\\right) = \\begin{bmatrix}1 & \\Delta t &  \\Delta t ^2/2\\\\ 0& 1 &\\Delta t \\\\ 0& 0&1\\end{bmatrix}\n\\]\ndt = 1\nX_0 = np.array([[1.2],[0.8],[0.1]])\nP_0 = np.array([[10.,0.,0],[0.,1.,0],[0,0,0.1]])\nPhi = np.array([[1.,dt,0.5*dt**2],[0.,1.,dt],[0,0,1]])\nH = np.array([[1.,0.,0.]])\n\nfor c,R in enumerate(R_k):\n    np.random.seed(0)\n    y = 1 + t_k + -0.5*0.03*t_k**2 + np.random.normal(1,np.sqrt(R),(100,1))\n    X_hs = np.zeros((len(y),*X_0.shape))\n    P_hs = np.zeros((len(y),*P_0.shape))\n    K_hs = np.zeros((len(y),X_0.shape[0],1))\n    X_hs[0],P_hs[0],K_hs[0] = Kalman_filter(X_0,P_0,y[0],R)\n    for i,y_k in enumerate(y[1:],1):\n        X_hs[i],P_hs[i],K_hs[i] = Kalman_filter(X_hs[i-1].copy(),P_hs[i-1].copy(),y_k,R)\n    l,=plt.plot(y,'x',label='Measurement',color=colors[c])\n    plt.plot(X_hs[:,0],'.-',color=l.get_color(),label='Estimated')\n    # plt.ylim(-5,6)\n    # plt.axhline(1)\n    plt.legend()\n    plt.xlabel(r'$t_k$')\n    plt.ylabel(r'$x_p$')\n    plt.plot(t_k,1 + t_k -0.5*0.03*t_k**2,color='k',zorder=-10)\n    plt.show()\n    plt.plot(X_hs[:,1],'.-',color=l.get_color(),label='Estimated')\n    plt.plot(1-0.03*t_k,'-',label='Real',color='k',zorder=-10)\n    plt.xlabel(r'$t_k$')\n    plt.ylabel(r'$\\dot{x}_p$')\n    plt.legend()\n\n    plt.show()\n\n    plt.plot(X_hs[:,2],'.-',color=l.get_color(),label='Estimated')\n    plt.axhline(-0.03,label='Real',color='k',zorder=-10)\n    plt.legend()\n    plt.xlabel(r'$t_k$')\n    plt.ylabel(r'$\\ddot{x}_p$')\n    plt.show()\n\n\n\n\n\n\n\n\n\n\n\n(a) \\(R_k=0.1,x_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(b) \\(v_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(c) \\(a_k\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(d) \\(R_k=1,x_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(e) \\(v_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(f) \\(a_k\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(g) \\(R_k=3,x_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(h) \\(v_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(i) \\(a_k\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n(j) \\(R_k=10,x_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(k) \\(v_k\\)\n\n\n\n\n\n\n\n\n\n\n\n(l) \\(a_k\\)\n\n\n\n\n\n\n\nFigure 4: \\(R_k\\)에 따른 Kalman filter의 보정 결과\n\n\n\nFigure 4 에서 보는것과 같이, Kalman filter를 통해 등가속도 하는 물체의 움직임을 예측할 수 있다. 측청에서 발생하는 노이즈 \\(R_k\\)가 줄어들수록 보다 적확한 움직임을 알 수 있다는 것을 볼 수 있다. 물체가 어떤움직임을 취할지에 대한 상태천이행렬, 위치에 대한 측정이 있다면 다소 노이즈가 있더라도 상태벡터 \\(X_k\\)를 확인해 볼 수 있다. Figure 4 의 그래프의 \\(v_k\\)에서는 속도가 시간이 지나면 감소하는 양상을 정확하게 확인해 볼 수 있었으며, \\(a_k\\)그래프에서는 가속도가 일정하다는 것 역시 Kalman filter를 통해서 알 수 있었다.",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Kalman-filter"
+    ]
   },
   {
     "objectID": "index.html",
@@ -12,5 +41,84 @@
     "title": "Gug-Young.github.io",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html",
+    "href": "probability-statistics/241010 Probability distribution.html",
+    "title": "Probability distribution",
+    "section": "",
+    "text": "여러 확률변수가 가질수있는 확률 밀도 함수 PDF (Probability density function)의 식과 모양을 알아볼 예정이다.(Li 1999)",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html#gaussian-distribution",
+    "href": "probability-statistics/241010 Probability distribution.html#gaussian-distribution",
+    "title": "Probability distribution",
+    "section": "Gaussian distribution",
+    "text": "Gaussian distribution\nGaussian distribution는 독일의 수학자 카를 프리드리히 가우스(Carl Friedrich Gauss)에 의해 소개되었으며, 정규 분포(Normal Distribution)라고도 불린다. 이 분포는 자연 현상에서 관측되는 많은 연속적인 데이터에 적합하며, 오차나 잡음 등의 확률적 변동을 모델링하는 데 사용될 수 있다. 또한 중심극한정리에 의해, 독립적인 확률 변수들의 합은 Gaussian 분포로 수렴하게 된다고 한다.\n확률 변수 표기법은 다음과 같다: \\[\nX\\sim N(\\mu,\\sigma^2).\n\\]\n또한 해당 변수의 PDF (Probability density function)은 다음과 같다: \\[\nf(x) = \\frac{1}{\\sqrt{2\\pi\\sigma^2}} \\exp\\left( -\\frac{(x - \\mu)^2}{2\\sigma^2} \\right)\n\\]\n이를 그래프로 그린다면 다음과 같이 나온다.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef N(x,mu,sigma):\n  return 1/np.sqrt(2*np.pi*sigma**2)*np.exp(-(x-mu)**2/(2*sigma**2))\n\nx = np.linspace(-5,5,1000)\nplt.ylabel('PDF',fontsize=15)\nplt.plot(x,N(x,0,1),lw=3)\nplt.xlabel('$X$',fontsize=15)\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Gaussian 분포의 확률 밀도 함수 그래프 \\(\\mu=0,\\sigma=1\\)",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html#uniform-distribution",
+    "href": "probability-statistics/241010 Probability distribution.html#uniform-distribution",
+    "title": "Probability distribution",
+    "section": "Uniform distribution",
+    "text": "Uniform distribution\nUniform 분포는 모든 값이 동일한 확률로 발생하는 가장 기본적인 분포 중 하나이다. 이는 균등 분포라고도 불리며, 주로 난수 생성이나 random sampling에서 사용된다.\n확률 변수 표기법은 다음과 같다: \\[\nX\\sim U(a,b),\n\\] 여기서 \\(a,b\\)는 각각 uniform distribution의 하한과 상한을 의미하며, PDF는 다음과 같이 나타난다: \\[\nf(x) = \\begin{cases}\n\\frac{1}{b - a}, & a \\leq x \\leq b \\\\\n0, & \\text{otherwise}\n\\end{cases}\n\\] 헤당 PDF를 그려보면 다음과 같이 나온다.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef U(x,a,b):\n  p = 1/(b-a)\n  return np.where((x&gt;=a)&(x&lt;=b),p,0)\n\nx = np.linspace(-3,3,1000)\nplt.ylabel('PDF',fontsize=15)\nplt.plot(x,U(x,0,2),'.:',lw=3)\nplt.xlabel('$X$',fontsize=15)\nplt.scatter([0,2],[0,0],facecolor='white',edgecolor='tab:blue',s=100,zorder=3)\nplt.scatter([0,2],[U(0,0,2),U(2,0,2)],s=100)\nplt.show()\n\n\n\n\n\n\n\nFigure 2: Uniform 분포의 확률 밀도 함수 그래프 \\(a=0,b=2\\)",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html#chi2-kai-square-distirbution",
+    "href": "probability-statistics/241010 Probability distribution.html#chi2-kai-square-distirbution",
+    "title": "Probability distribution",
+    "section": "\\(\\chi^2\\) (Kai-square) distirbution",
+    "text": "\\(\\chi^2\\) (Kai-square) distirbution\n카이제곱 분포는 통계학자 카를 피어슨(Karl Pearson)에 의해 도입되었으며, 표준 정규 분포를 따르는 독립적인 확률 변수들의 제곱합으로부터 유도 된다. 주로 적합도 검정, 독립성 검정 등 통계적 가설 검정에 사용된다고 한다.\n확률 변수의 표기법은 다음과 같다: \\[\nX\\sim \\chi^2_k\n\\] 카이제곱 분포는 \\(k\\)개의 표준 정규 분포(\\(N(0,1)\\))를 따르는 확률 변수들의 제곱합으로 정의 되며, 여기서 \\(k\\)는 자유도라고도 불린다. 카이제곱 분포와 정규분포의 확률변수의 관계를 나타내면 다음과 같다: \\[\nX=\\sum_{i=1}^{k}Z_i^2 \\quad (\\text{where } Z_i \\sim N(0,1)).\n\\]\n또한 카이제곱 분포의 PDF는 다음과 같이 나타난다: \\[\nf(x; k) = \\frac{1}{2^{k/2}\\Gamma(k/2)} x^{(k/2)-1} e^{-x/2},\n\\] 여기서 \\(\\Gamma\\)는 감마함수를 나타낸다.\n각각의 자유도마다 PDF를 나타내면 다음 그래프와 같다\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.special import gamma\n\ndef Kai2(x,k):\n  return 1/(2**(k/2)*gamma(k/2))*(x**(k/2-1)*np.exp(-x/2))\n\nx = np.linspace(0,10,1000)\nplt.ylabel('PDF',fontsize=15)\nfor k in [1,2,3,4,6,9]:\n  plt.plot(x,Kai2(x,k),lw=2,label=f'$k$={k}',zorder=k)\nplt.legend(fontsize=13)\nplt.ylim(0,1)\nplt.xlabel('$X$',fontsize=15)\nplt.show()\n\n/var/folders/lj/v2s5sd8n1cv2xdh0yw2kf0x00000gn/T/ipykernel_9478/2007568854.py:6: RuntimeWarning: divide by zero encountered in power\n  return 1/(2**(k/2)*gamma(k/2))*(x**(k/2-1)*np.exp(-x/2))\n\n\n\n\n\n\n\n\nFigure 3: Kai-square 분포의 확률 밀도 함수 그래프 \\(k=1,2,3,4,6,9\\)",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html#reighley-distribution",
+    "href": "probability-statistics/241010 Probability distribution.html#reighley-distribution",
+    "title": "Probability distribution",
+    "section": "Reighley distribution",
+    "text": "Reighley distribution\nRayleigh 분포는 물리학자 존 윌리엄 스트럿 레일리(John William Strutt, 3rd Baron Rayleigh)에 의해 소개되었다. 이는 이차원에서의 진폭이나 거리 등의 분포를 모델링하며, 신호 처리, 무선 통신, 기상학 등에서 신호 강도나 파동의 진폭을 표현하는 데 사용된다고 한다.\nRayleigh분포는 두 개의 독립적이며, 서로 같은 분산을 가지고 평균이 0인 Gaussian 분포를 따르는 확률 변수들의 제곱근 합으로 얻어진다. 즉, \\[\nR=\\sqrt{X^2+Y^2}\n\\] 이며, 여기서 \\(X,Y\\sim N(0,\\sigma^2)\\)이다. 이는 2차원 공간에서의 벡터의 크기를 나타내며, 진폭 혹은 에너지와 같은 물리적 의미를 두고 해석 할 수 있다.\nReighley 분포의 PDF를 나타낸다면 다음과 같이 나타낼 수 있다(Papoulis 1965): \\[\nf(x; \\sigma) = \\frac{x}{\\sigma^2} e^{-\\frac{x^2}{2\\sigma^2}}\n\\]\n또한 해당 PDF를 다른 분산에 대해서 그리면 다음과 같이 나타낼 수 있다.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef Reighley(x,sigma):\n  return x/sigma**2 *np.exp(-(x)**2/(2*sigma**2))\n\nx = np.linspace(0,10,1000)\nplt.ylabel('PDF',fontsize=15)\nfor sigma in [0.5,1,2,3,4]:\n  l,=plt.plot(x,Reighley(x,sigma),lw=2,label=f'$\\sigma$={sigma}',zorder=sigma)\n  plt.axvline(sigma,ls=':',alpha=0.6,color=l.get_color())\nplt.legend(fontsize=13)\n\n# plt.ylim(0,1)\nplt.xlabel('$X$',fontsize=15)\nplt.show()\n\n&lt;&gt;:10: SyntaxWarning: invalid escape sequence '\\s'\n&lt;&gt;:10: SyntaxWarning: invalid escape sequence '\\s'\n/var/folders/lj/v2s5sd8n1cv2xdh0yw2kf0x00000gn/T/ipykernel_9478/1144457875.py:10: SyntaxWarning: invalid escape sequence '\\s'\n  l,=plt.plot(x,Reighley(x,sigma),lw=2,label=f'$\\sigma$={sigma}',zorder=sigma)\n\n\n\n\n\n\n\n\nFigure 4: Reighley 분포의 확률 밀도 함수 그래프 \\(\\sigma=0.5,1,2,3,4\\)\n\n\n\n\n\nFigure 4 에서 그려진 세로선은 \\(\\sigma\\)를 나타내는 선으로 \\(f(x,\\sigma)\\)에서 최댓값이 나타나는 부분과 일치하는 것을 확인 해 볼 수 있다.",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "probability-statistics/241010 Probability distribution.html#poisson-distribution",
+    "href": "probability-statistics/241010 Probability distribution.html#poisson-distribution",
+    "title": "Probability distribution",
+    "section": "Poisson distribution",
+    "text": "Poisson distribution\nPoisson 분포는 프랑스의 수학자 시메옹 드니 푸아송(Siméon Denis Poisson)에 의해 발견되었다. 이는 단위 시간이나 공간에서 발생하는 희소한 사건의 발생 횟수를 모델링하며, 통신 이론, 신뢰성 공학, 대기과학 등에서 사용될 수 있다.\nPoisson 분포는 이항 분포와도 관련이 있는데, 이항 분포에서 시행 횟수 \\(n\\)이 매우 크고 성공 확률 \\(p\\)가 매우 작을 때 (\\(n\\to \\infty,p\\to 0\\) 이며, 기댓값은 \\(np=\\lambda\\)), 이항 분포는 Poisson 분포로 근사되게 된다. 이 때의 식은 다음과 같다: \\[\n\\lim_{n \\to \\infty} \\binom{n}{k} p^k (1-p)^{n-k} = \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\] 여기서 \\(k\\)는 사건이 발생한 횟수를 의미하게 된다.\n사건이 일어나는 횟수를 나타내기 때문에, 확률 변수는 독립적으로 나타내며, 이떄의 확률 질량 함수 PMF(probability mass function)는 다음과 같이 낱타낸다: \\[\nf(x;k)= \\frac{\\lambda^k e^{-\\lambda}}{k!}\n\\]\nPossion 분포의 기댓값 \\(\\lambda\\)에 따른 PMF 그래프를 나타내면 다음과 같이 나타낼 수 있다.\n\nimport numpy as np\nimport math\nimport matplotlib.pyplot as plt\n\ndef Possion(k: int,lamb: float):\n  return lamb**k*np.exp(-lamb)/math.factorial(k)\nPossion = np.vectorize(Possion)\n\nks = np.arange(0,21,1,dtype=int)\nplt.ylabel('PMF',fontsize=15)\nfor lamb in [1,4,10]:\n  l,=plt.plot(ks,Possion(ks,lamb),'o-',lw=2,label=f'$\\lambda$={lamb}',zorder=lamb)\nplt.legend(fontsize=13)\nplt.xticks([0,5,10,15,20])\nplt.xlabel('$k$',fontsize=15)\nplt.show()\n\n&lt;&gt;:12: SyntaxWarning: invalid escape sequence '\\l'\n&lt;&gt;:12: SyntaxWarning: invalid escape sequence '\\l'\n/var/folders/lj/v2s5sd8n1cv2xdh0yw2kf0x00000gn/T/ipykernel_9478/101561540.py:12: SyntaxWarning: invalid escape sequence '\\l'\n  l,=plt.plot(ks,Possion(ks,lamb),'o-',lw=2,label=f'$\\lambda$={lamb}',zorder=lamb)\n\n\n\n\n\n\n\n\nFigure 5: Possion 분포의 확률 질량 함수 그래프 \\(\\lambda=1,4,10\\)",
+    "crumbs": [
+      "Home",
+      "수중음향 신호처리",
+      "Probability distribution"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]
